@@ -1,6 +1,28 @@
 # live-preview-sandbox
 
-> My flawless Nuxt.js project
+Nuxt.js の [preview mode](https://nuxtjs.org/guides/features/live-preview#previewing-pages-that-are-not-yet-generated)をどうにか試してみる
+
+## やったこと
+
+microcms で適当にコンテンツを作成して API を叩く。
+
+ドキュメントの通りにコマンドを叩く
+
+```
+$ yarn generate
+$ yarn start
+```
+
+`/blog/:id` で記事が表示される。
+ここで microcms のコンテンツを書き換えてリロードしても、変化はない。
+
+次に`/blog/:id?preview=true` で microcms の記事を書き換え、リロードすると差分が更新された。
+
+これが preview mode なのか? なにが嬉しいのかわからん
+
+## その他
+
+API_KEY を `privateRuntimeConfig` に設定するとうまくいかなかったので、 `publicRuntimeConfig` に設定した。
 
 ## Build Setup
 
