@@ -1,4 +1,10 @@
+require("dotenv").config();
+const { API_KEY } = process.env;
+
 export default {
+  publicRuntimeConfig: {
+    apiKey: API_KEY
+  },
   mode: "universal",
   target: "static",
   /*
@@ -32,11 +38,11 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: ["@nuxtjs/dotenv"],
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxt/content"],
+  modules: ["@nuxtjs/axios"],
   /*
    ** Build configuration
    */
